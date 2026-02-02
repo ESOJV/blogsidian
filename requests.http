@@ -1,0 +1,65 @@
+### Get all posts
+
+GET http://localhost:8082/posts HTTP/1.1
+
+
+### Create edge case test post
+
+POST http://localhost:8082/posts HTTP/1.1
+Content-Type: text/plain
+
+< ./posts/edge-case-test.md
+
+
+### Create test post
+
+POST http://localhost:8082/posts HTTP/1.1
+Content-Type: text/plain
+
+< ./posts/test.md
+
+
+### Get single post (edge case)
+
+GET http://localhost:8082/posts/edge-case-test HTTP/1.1
+
+
+### Get single post (test)
+
+GET http://localhost:8082/posts/test HTTP/1.1
+
+
+### Update a post
+
+PUT http://localhost:8082/posts/edge-case-test HTTP/1.1
+Content-Type: text/plain
+
+< ./posts/edge-case-test.md
+
+
+### Delete edge case post
+
+DELETE http://localhost:8082/posts/edge-case-test HTTP/1.1
+
+
+### Delete test post
+
+DELETE http://localhost:8082/posts/test HTTP/1.1
+
+
+### Upload an image
+
+POST http://localhost:8082/images HTTP/1.1
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="download.jpeg"
+Content-Type: image/jpeg
+
+< ./images/download.jpeg
+--boundary--
+
+
+### Get an image
+
+GET http://localhost:8082/images/download.jpeg HTTP/1.1
