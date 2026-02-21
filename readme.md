@@ -7,12 +7,11 @@ Wanted a simple way to upload blog posts straight from obsidian markdown, I have
 
 Basic Idea is: 
 
-
 CLI HELPER -> blogsidian -> HTML
 
 Just simply push your post to blogsidian and it will put it into a sqlite database for you as parsed html. 
 
-
-Using standard frontmatter 
-
-
+# Features
+- Image Parsing
+- Latex support
+- Frontmatter parsing 
