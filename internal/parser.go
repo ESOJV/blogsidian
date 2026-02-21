@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"strings"
 
+	goldmarkkatex "github.com/FurqanSoftware/goldmark-katex"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
 	"gopkg.in/yaml.v3"
@@ -24,7 +25,10 @@ func ParsePost(data []byte) (*Post, error) {
 	}
 
 	md := goldmark.New(
-		goldmark.WithExtensions(extension.GFM),
+		goldmark.WithExtensions(
+			extension.GFM,
+			&goldmarkkatex.Extender{},
+		),
 	)
 
 	var buf bytes.Buffer
